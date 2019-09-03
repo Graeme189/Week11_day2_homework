@@ -7,6 +7,7 @@ public class BorrowerTest {
 
     Borrower borrower;
     Book book;
+    Library library;
 
     @Before
     public void setUp() {
@@ -18,5 +19,10 @@ public class BorrowerTest {
         assertEquals(0, borrower.borrowedListCount());
     }
 
+    @Test
+    public void checkCanBorrowBook() {
+        borrower.borrowBook(library);
+        assertEquals(1, borrower.borrowedListCount());
+    }
 }
 

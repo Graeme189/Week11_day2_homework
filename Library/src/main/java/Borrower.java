@@ -13,6 +13,7 @@ public class Borrower {
     }
 
     public void borrowBook(Library library) {
-
+        Book book = library.lendBook();
+        this.borrowedList.add(book);
     }
 }

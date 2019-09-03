@@ -19,4 +19,8 @@ public class Library {
             this.collection.add(book);
         }
     }
+
+    public Book lendBook() {
+        return this.collection.remove(0);
+    }
 }

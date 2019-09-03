@@ -10,7 +10,7 @@ public class LibraryTest {
 
     @Before
     public void setUp(){
-        library = new Library();
+        library = new Library(1);
         book = new Book("Fear and Loathing", "Hunter Thompson", "non-fiction");
     }
 
@@ -23,6 +23,16 @@ public class LibraryTest {
     public void canAddBook() {
         library.addBook(book);
         assertEquals(1, library.countBooks());
+
     }
+
+    @Test
+    public void cantAddBook() {
+        library.addBook(book);
+        library.addBook(book);
+        assertEquals(1, library.countBooks());
+    }
+
+
 }
 
